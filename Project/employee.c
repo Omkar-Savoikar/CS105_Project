@@ -1,5 +1,5 @@
 /*
-    AUTHOR: MCA.2104
+    AUTHOR: MCA.2104, MCA.2103
     PROGRAM: PROJECT
     DATE CREATED: 18 NOV 2021
     DATE MODIFIED: 29 DEC 2021
@@ -111,9 +111,9 @@ int grantBonus(listNd *list, int empID, float bonus) {
 }
 
 int advanceSal(listNd *list, int empID, float sal) {
-    // return 1: success
-    // return -1: employee not found
-    // return -2: asked salary greater than salary left
+    //return 1: success
+    //return -1: employee not found
+    //return -2: asked salary greater than salary left
     empNd *temp;
     temp = list->firstEmp;
     while (temp != NULL) {

@@ -1,5 +1,5 @@
 /*
-    AUTHOR: MCA.2104
+    AUTHOR: MCA.2104, MCA.2103
     PROGRAM: PROJECT
     DATE CREATED: 18 NOV 2021
     DATE MODIFIED: 29 DEC 2021
@@ -105,8 +105,8 @@ int addEmployee(graphNd *graph, int prjID, listNd *list, int empID) {
 }
 
 int displayProject(graphNd *graph, int prjID) {
-    // return 1: success
-    // return -1: project not found
+    //return 1: success
+    //return -1: project not found
     projectNd *project;
     linkNd *link;
     project = graph->firstProject;
@@ -150,7 +150,7 @@ int removeEmployee(graphNd *graph, int prjID, listNd *list, int empID) {
     project = graph->firstProject;
     while (project != NULL) {
         if (project->prj.projectID == prjID) {
-            // Project found
+            //Project found
             success = -1;
             break;
         }
@@ -178,11 +178,11 @@ int removeEmployee(graphNd *graph, int prjID, listNd *list, int empID) {
                 prev->nextLink = del->nextLink;
             free(del);
             (project->prj.empCount)--;
-            return (1); // Deleted
+            return (1); //Deleted
         }
-        return (-2); // Employee not found
+        return (-2); //Employee not found
     }
-    return (-1); // Project not found
+    return (-1); //Project not found
 }
 
 int deleteProject(graphNd* graph, int prjID, listNd *list) {

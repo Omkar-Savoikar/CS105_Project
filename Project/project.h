@@ -1,5 +1,5 @@
 /*
-    AUTHOR: MCA.2104
+    AUTHOR: MCA.2104, MCA.2103
     PROGRAM: PROJECT
     DATE CREATED: 18 NOV 2021
     DATE MODIFIED: 29 DEC 2021
@@ -38,82 +38,82 @@
     };
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: createGraph
+        function: create a new graph
+        input: none
+        pre-condition: none
+        output: graphNd*
+        post-condition: new graph is created
     */
     graphNd* createGraph();
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: insertProject
+        function: inserts new project in the graph
+        input: graphNd*, prjstr
+        pre-condition: graph exists
+        output: projectNd*
+        post-condition: new project added in the graph
     */
     projectNd* insertProject(graphNd *graph, prjstr name);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: addEmployee
+        function: adds an employee to a project
+        input: graphNd*, int, listNd*, int
+        pre-condition: linkedlist not empty
+        output: return 1 if employee successfully added, return -1 if memory couldnt be created, return -2 if project doesnt exist, return -3 if employee doesnt exist, return -4 if employee already working on another project
+        post-condition: an employee added to a project
     */
     int addEmployee(graphNd *graph, int prjID, listNd *list, int empID);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: displayAllProject
+        function: displays all projects in the graph
+        input: graphNd*
+        pre-condition: graph not empty
+        output: none
+        post-condition: none
     */
     void displayAllProject(graphNd *graph);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: displayProject
+        function: display one project from the graph
+        input: graphNd*, int
+        pre-condition: graph not empty
+        output: 1 if project exists, -1 otherwise
+        post-condition: none
     */
     int displayProject(graphNd *graph, int prjID);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: removeEmployee
+        function: removes an employee from a project and free the memory allocated
+        input: graphNd*, int, listNd*, int
+        pre-condition: linkedlist not empty
+        output: return 1 if employee successfully removed from project, return -1 if project not found in the database, return -2 if employee not found in the project list
+        post-condition: an employee removed from a project
     */
     int removeEmployee(graphNd *graph, int prjID, listNd *list, int empID);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: deleteProject
+        function: deletes a project from the graph and free the memory allocated
+        input: graphNd*, int, listNd*
+        pre-condition: graph not empty
+        output: 1 if project successfully deleted, -1 otherwise
+        post-condition: project deleted from the graph
     */
     int deleteProject(graphNd* graph, int prjID, listNd *list);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: destroyGraph
+        function: deletes all projects from the graph and free the memory allocated
+        input: graphNd*, listNd*
+        pre-condition: none
+        output: none
+        post-condition: all projects deleted from the graph
     */
     void destroyGraph(graphNd *graph, listNd *list);
 #endif

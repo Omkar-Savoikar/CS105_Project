@@ -1,5 +1,5 @@
 /*
-    AUTHOR: MCA.2104
+    AUTHOR: MCA.2104, MCA.2103
     PROGRAM: PROJECT
     DATE CREATED: 18 NOV 2021
     DATE MODIFIED: 29 DEC 2021
@@ -49,112 +49,112 @@
     };
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: createList
+        function: create a new list
+        input: none
+        pre-condition: none
+        output: listNd*
+        post-condition: new list created
     */
     listNd* createList();
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: calcSal
+        function: calculates salary of an employee
+        input: listNd*, int
+        pre-condition: none
+        output: total salary of the employee
+        post-condition: none
     */
     float calcSal(listNd *list, int empID);
     
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: insertEmployee
+        function: add an employee to the list
+        input: listNd*, empstr
+        pre-condition: list exist
+        output: empNd*
+        post-condition: new employee added to the list
     */
     empNd* insertEmployee(listNd *list, empstr emp);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: refresh
+        function: sets all employee parameters to default
+        input: listNd*
+        pre-condition: list not empty
+        output: none
+        post-condition: sets all employee parameters to default
     */
     void refresh(listNd *list);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: grantBonus
+        function: grants bonus to employee
+        input: listNd*, int, float
+        pre-condition: list not empty
+        output: 1 if bonus granted, 0 otherwise
+        post-condition: bonus granted to employee
     */
     int grantBonus(listNd *list, int empID, float bonus);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
+        function name: advanceSal
+        function: grants advance salary to an employee
+        input: listNd*, int, float
+        pre-condition: list not empty
+        output: return 1 if advance granted successfully, return -1 if employee not found, return -2 if asked salary greater than salary left
         post-condition: 
     */
     int advanceSal(listNd *list, int empID, float sal);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: grantLeave
+        function: grants leave to an employee
+        input: listNd*, int, float
+        pre-condition: list not empty
+        output: return 1 if leave granted successfully, return -1: employee not found, return -2 if leaves asked for is greater than leaves left of the employee
+        post-condition: leave granted to employee
     */
     int grantLeave(listNd *list, int empID, int leave);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: displayEmployee
+        function: displays employee details
+        input: listNd*, int
+        pre-condition: list not empty
+        output: 1 if successfully, -1 otherwise
+        post-condition: none
     */
     int displayEmployee(listNd *list, int empID);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: displayAllEmployees
+        function: displays all employee details
+        input: listNd*
+        pre-condition: list not empty
+        output: none
+        post-condition: none
     */
     void displayAllEmployees(listNd *list);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: deleteEmployee
+        function: deletes an employee from the list and frees the memory allocated
+        input: listNd*, int
+        pre-condition: list not empty
+        output: return 1 if successfull, return -1 if employee not found, return -2 if employee working on a project
+        post-condition: employee deleted from the list
     */
     int deleteEmployee(listNd* list, int ID);
 
     /*
-        function name: 
-        function: 
-        input: 
-        pre-condition: 
-        output: 
-        post-condition: 
+        function name: destroyList
+        function: deletes all employees from the list and frees the memory allocated
+        input: listNd*
+        pre-condition: none
+        output: none
+        post-condition: all employees deleted from the list
     */
     void destroyList(listNd *list);
 #endif
