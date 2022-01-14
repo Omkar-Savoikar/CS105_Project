@@ -39,9 +39,10 @@ void main() {
         printf("\nEnter 10 to display all projects details.");
         printf("\nEnter 11 to display single employee details.");
         printf("\nEnter 12 to display all employee details.");
-        printf("\nEnter 13 to refresh employee data at month end");
-        printf("\nEnter 14 to delete an employee.");
-        printf("\nEnter 15 to delete a project.");
+        printf("\nEnter 13 to generate month end report of all projects.");
+        printf("\nEnter 14 to refresh employee data at month end.");
+        printf("\nEnter 15 to delete an employee.");
+        printf("\nEnter 16 to delete a project.");
         printf("\nEnter 0 to exit.");
         printf("\nEnter your choice: ");
         scanf("%d",&option);
@@ -236,6 +237,15 @@ void main() {
                 break;
             }
             case 13: {
+                //generate month end report
+                if (graph->prjCount == 0) {
+                    printf("\nNo project in the database.");
+                    break;
+                }
+                generateReport(graph, list);
+                break;
+            }
+            case 14: {
                 //refresh employee data
                 if (list->empCount == 0) {
                     printf("\nNo employees in the database.");
@@ -245,7 +255,7 @@ void main() {
                 printf("\nEmployee data refreshed.");
                 break;
             }
-            case 14: {
+            case 15: {
                 //delete an employee
                 if (list->empCount == 0) {
                     printf("\nNo employees in the database.");
@@ -262,7 +272,7 @@ void main() {
                     printf("\nEmployee is assigned to a project. Remove employee from assigned project and try again.");
                 break;
             }
-            case 15: {
+            case 16: {
                 //delete a project
                 if(graph->prjCount == 0) {
                     printf("\nNo project in the database.");

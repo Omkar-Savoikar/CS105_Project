@@ -79,13 +79,23 @@
 
     /*
         function name: displayProject
-        function: display one project from the graph
+        function: displays one project from the graph
         input: graphNd*, int
         pre-condition: graph not empty
         output: 1 if project exists, -1 otherwise
         post-condition: none
     */
     int displayProject(graphNd *graph, int prjID);
+
+    /*
+        function name: generateReport
+        function: generates report of all projects at the end of the month
+        input: graphNd*, listNd*
+        pre-condition: graph not empty
+        output: 1 none
+        post-condition: none
+    */
+    void generateReport(graphNd *graph, listNd *list);
 
     /*
         function name: removeEmployee

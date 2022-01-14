@@ -139,6 +139,36 @@ void displayAllProject(graphNd *graph) {
     }
 }
 
+void generateReport(graphNd *graph, listNd *list) {
+    projectNd *project;
+    linkNd *link;
+    empNd *emp;
+    int leave = 0;
+    float sal = 0.0;
+    float adv = 0.0;
+    project = graph->firstProject;
+    while (project != NULL) {
+        displayProject(graph, project->prj.projectID);
+        link = project->firstEmp;
+        while (link != NULL) {
+            emp = list->firstEmp;
+            while(link->destination.empID != emp->emp.empID)
+                emp = emp->nextEmp;
+            leave += emp->emp.leavesTaken;
+            sal += calcSal(list, link->destination.empID);
+            adv += emp->emp.salAdvance;
+            link = link->nextLink;
+        }
+        printf("\nReport:");
+        printf("\nTotal salary to be paid to employees working on the project = %g", sal);
+        printf("\nSalary advance given to employees working on the project = %g", adv);
+        printf("\nSalary to be paid to employees working on the project = %g", sal-adv);
+        printf("\nTotal leaves taken by employees working on the project = %d", leave);
+        printf("\n----------------------------------------------------------------");
+        project = project->nextProject;
+    }
+}
+
 int removeEmployee(graphNd *graph, int prjID, listNd *list, int empID) {
     //return 1: success
     //return -1: project not found in the database
